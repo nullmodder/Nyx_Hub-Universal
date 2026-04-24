@@ -30,17 +30,17 @@ local TabsOrder = {
 
 local TabsLoader = {
   MainTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/MainTab.lua")),
-  ClientTab = loadstring(game:HttpGet("Url")),
-  TrollTab loadstring(game:HttpGet("Url")),
+  ClientTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/ClientTab.lua")),
+  TrollTab loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/TrollTab.lua")),
   AnimationsTab = loadstring(game:HttpGet("Url")),
-  ScriptsTab = loadstring(game:HttpGet("Url")),
-  CombatTab = loadstring(game:HttpGet("Url")),
-  VisualsTab = loadstring(game:HttpGet("Url")),
-  TeleportsTab = loadstring(game:HttpGet("Url")),
-  MiscTab = loadstring(game:HttpGet("Url")),
-  UiSettingsTab = loadstring(game:HttpGet("Url")),
-  CreditsTab = loadstring(game:HttpGet("Url")),
-  AdminTab loadstring(game:HttpGet("Url"))
+  ScriptsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/ScriptsTab.lua")),
+  CombatTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/ScriptsTab.lua")),
+  VisualsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/VisualsTab.lua")),
+  TeleportsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/TeleportsTab.lua")),
+  MiscTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/MiscTab.lua")),
+  UiSettingsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/UiSettingsTab.lua")),
+  CreditsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/CreditsTab.lua")),
+  AdminTab loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/AdminTab.lua"))
 }
 
 for _,TabName in ipairs(TabsOrder) do
