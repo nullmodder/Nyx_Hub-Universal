@@ -29,7 +29,7 @@ local TabsOrder = {
 }
 
 local TabsLoader = {
-  MainTab = loadstring(game:HttpGet("Url")),
+  MainTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/MainTab.lua")),
   ClientTab = loadstring(game:HttpGet("Url")),
   TrollTab loadstring(game:HttpGet("Url")),
   AnimationsTab = loadstring(game:HttpGet("Url")),
