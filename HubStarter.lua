@@ -31,7 +31,7 @@ local TabsOrder = {
 local TabsLoader = {
   MainTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/MainTab.lua")),
   ClientTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/ClientTab.lua")),
-  TrollTab loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/TrollTab.lua")),
+  TrollTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/TrollTab.lua")),
   AnimationsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/AnimationsTab.lua")),
   ScriptsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/ScriptsTab.lua")),
   CombatTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/ScriptsTab.lua")),
@@ -40,7 +40,7 @@ local TabsLoader = {
   MiscTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/MiscTab.lua")),
   UiSettingsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/UiSettingsTab.lua")),
   CreditsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/CreditsTab.lua")),
-  AdminTab loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/AdminTab.lua"))
+  AdminTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/AdminTab.lua"))
 }
 
 for _,TabName in ipairs(TabsOrder) do
