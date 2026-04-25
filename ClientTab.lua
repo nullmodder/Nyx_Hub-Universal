@@ -103,6 +103,9 @@ ClientTab:CreateToggle({
     CurrentValue = false,
     Callback = function(State)
       WalkSpeedState = State
+      if not State then
+        SetWalkSpeed(16)
+      end
     end
 })
 
@@ -117,6 +120,8 @@ ClientTab:CreateSlider({
     Callback = function(Value)
       if WalkSpeedState then
       SetWalkSpeed(Value)
+      else
+      SetWalkSpeed(16)
       end
       WalkSpeedValue = Value
     end
@@ -127,10 +132,13 @@ ClientTab:CreateToggle({
     CurrentValue = false,
     Callback = function(State)
       JumpPowerState = State
+      if not State then
+        SetJumpPower(52)
+      end
     end
 })
 
-local JumpValue = 50
+local JumpPowerValue = 50
 
 ClientTab:CreateSlider({
     Name = "JumpPower Value",
@@ -141,6 +149,8 @@ ClientTab:CreateSlider({
     Callback = function(Value)
       if JumpPowerState then
       SetJumpPower(Value)
+      else
+        SetJumpPower(52)
       end
       JumpValue = Value
     end
