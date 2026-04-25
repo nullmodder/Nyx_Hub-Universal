@@ -176,6 +176,19 @@ ClientTab:CreateToggle({
     end
 })
 
+local FloatSpeed = 1
+
+ClientTab:CreateSlider({
+    Name = "Float Speed",
+    Range = {1, 100},
+    Increment = 0.1,
+    Suffix = "Studs/s",
+    CurrentValue = 1,
+    Callback = function(Value)
+      FloatSpeed = Value
+    end
+})
+
 
 RunService.Heartbeat:Connect(function()
     local Character = GetCharacter(Client)
@@ -188,10 +201,9 @@ RunService.Heartbeat:Connect(function()
         local MoveDirection = Humanoid.MoveDirection
         local HumanoidRootPartLookVector = HumanoidRootPart.CFrame.LookVector
         local CameraLookVector = Camera.CFrame.LookVector
-        local FloatSpeed = FloatSpeed
         
         if MoveDirection.Magnitude > 0 then
-          HumanoidRootPart.CFrame = CFrame.lookAt(HumanoidRootPart.Position, Camera.CFrame.Position)
+          HumanoidRootPart.CFrame = CFrame.lookAt(HumanoidRootPart.Position, CameraLookVector)
           HumanoidRootPart.CFrame = HumanoidRootPart.CFrame * CFrame.new(HumanoidRootPartLookVector + FloatSpeed)
           Humanoid.PlatformStand = true
           Workspace.Gravity = 0
