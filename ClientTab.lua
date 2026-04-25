@@ -47,10 +47,9 @@ local NoclipState = false
 function SetNoclip(State)
   local Character = GetCharacter(Client)
   if Character then
-    for i,v in ipairs(Character:GetDescendants()) do
-      if v:IsA("BasePart") then
-        v.CanCollide = not State
-      end
+    local HumanoidRootPart = GetCharacterInstance(Character,"HumanoidRootPart")
+    if HumanoidRootPart then
+      HumanoidRootPart.CanCollide = not State
     end
   end
 end
@@ -106,8 +105,10 @@ ClientTab:CreateSlider({
     Suffix = "",
     CurrentValue = 16,
     Callback = function(Value)
+      if WalkSpeedState then
       SetWalkSpeed(Value)
       WalkSpeedValue = Value
+      end
     end
 })
 
@@ -128,8 +129,10 @@ ClientTab:CreateSlider({
     Suffix = "",
     CurrentValue = 52,
     Callback = function(Value)
+      if JumpPowerState then
       JumpPowerState(Value)
       JumpValue = Value
+      end
     end
 })
 
@@ -151,7 +154,7 @@ RunService.Heartbeat:Connect(function()
         if FloatState then
         local MoveDirection = Humanoid.MoveDirection
         local LookVector = Camera.CFrame.LookVector
-        
+
         HumanoidRootPart.CFrame = HumanoidRootPart.CFrame * CFrame.new(LookVector + MoveDirection)
         Humanoid.PlatformStand = true
         Workspace.Gravity = 0
