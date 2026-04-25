@@ -43,13 +43,23 @@ function SetJumpPower(JumpPower)
 end
 
 local NoclipState = false
+local NoclipPartsOriginalCollide = {}
 
 function SetNoclip(State)
   local Character = GetCharacter(Client)
   if Character then
-    local HumanoidRootPart = GetCharacterInstance(Character,"HumanoidRootPart")
-    if HumanoidRootPart then
-      HumanoidRootPart.CanCollide = not State
+    for i,v in ipairs(Character:GetDescendants()) do
+      if v:IsA("BasePart") then
+        if not NoclipPartsOriginalCollide[v] then
+          NoclipPartsOriginalCollide[v] = v.CanCollide
+        end
+        if State then
+          v.CanCollide = false
+        else
+          local OriginalCollide = NoclipPartsOriginalCollide[v]
+          v.CanCollide = OriginalCollide
+        end
+      end
     end
   end
 end
@@ -107,8 +117,8 @@ ClientTab:CreateSlider({
     Callback = function(Value)
       if WalkSpeedState then
       SetWalkSpeed(Value)
-      WalkSpeedValue = Value
       end
+      WalkSpeedValue = Value
     end
 })
 
@@ -130,9 +140,9 @@ ClientTab:CreateSlider({
     CurrentValue = 52,
     Callback = function(Value)
       if JumpPowerState then
-      JumpPowerState(Value)
-      JumpValue = Value
+      SetJumpPower(Value)
       end
+      JumpValue = Value
     end
 })
 
