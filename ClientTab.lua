@@ -71,11 +71,20 @@ function StartFloat()
   local Character = GetCharacter(Client)
   if Character then
     local Humanoid = GetCharacterInstance(Character,"Humanoid")
+    local HumanoidRootPart = GetCharacterInstance(Character,"HumanoidRootPart")
     if Humanoid then
       Humanoid.PlatformStand = true
       FloatState = true
     else
       Workspace.Gravity = 192
+    end
+    if HumanoidRootPart then
+      if not HumanoidRootPart:FindFirstChild("Float") then
+        local Float = Instance.new("BodyPosition")
+        Float.Name = "Float"
+        Float.MaxForce = Vector3.new(9e7,9e7,9e7)
+        Float.Parent = HumanoidRootPart
+      end
     end
   else
     Workspace.Gravity = 192
@@ -198,17 +207,26 @@ RunService.Heartbeat:Connect(function()
       local HumanoidRootPart = GetCharacterInstance(Character,"HumanoidRootPart")
       if Humanoid and HumanoidRootPart then
         if FloatState then
+        if not HumanoidRootPart:FindFirstChild("Float") then
+        local Float = Instance.new("BodyPosition")
+        Float.Name = "Float"
+        Float.MaxForce = Vector3.new(9e7,9e7,9e7)
+        Float.Parent = HumanoidRootPart
+        end
+        local Float = HumanoidRootPart:FindFirstChild("Float")
+        if Float then
         local MoveDirection = Humanoid.MoveDirection
         local HumanoidRootPartLookVector = HumanoidRootPart.CFrame.LookVector
         local CameraLookVector = Camera.CFrame.LookVector
-        
+
         if MoveDirection.Magnitude > 0 then
-          HumanoidRootPart.CFrame = CFrame.new(HumanoidRootPart.Position + CameraLookVector + MoveDirection * FloatSpeed)
+          Float.Position = HumanoidRootPart.Position + CameraLookVector + MoveDirection * FloatSpeed
           Humanoid.PlatformStand = true
           Workspace.Gravity = 0
         end
         end
-        
+        end
+
         if WalkSpeedState then
           SetWalkSpeed(WalkSpeedValue)
         end
