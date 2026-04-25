@@ -164,6 +164,19 @@ ClientTab:CreateToggle({
     end
 })
 
+ClientTab:CreateToggle({
+    Name = "Enable Float",
+    CurrentValue = false,
+    Callback = function(State)
+      if State then
+        StartFloat()
+      else
+        StopFloat()
+      end
+    end
+})
+
+
 RunService.Heartbeat:Connect(function()
     local Character = GetCharacter(Client)
     local Camera = Workspace.CurrentCamera
