@@ -203,7 +203,6 @@ RunService.Heartbeat:Connect(function()
         local CameraLookVector = Camera.CFrame.LookVector
         
         if MoveDirection.Magnitude > 0 then
-          HumanoidRootPart.CFrame = CFrame.lookAt(HumanoidRootPart.Position, CameraLookVector)
           HumanoidRootPart.CFrame = CFrame.new(HumanoidRootPart.Position + CameraLookVector * FloatSpeed)
           Humanoid.PlatformStand = true
           Workspace.Gravity = 0
