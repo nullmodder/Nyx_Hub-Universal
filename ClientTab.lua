@@ -186,12 +186,18 @@ RunService.Heartbeat:Connect(function()
       if Humanoid and HumanoidRootPart then
         if FloatState then
         local MoveDirection = Humanoid.MoveDirection
-        local LookVector = Camera.CFrame.LookVector
-
-        HumanoidRootPart.CFrame = HumanoidRootPart.CFrame * CFrame.new(LookVector + MoveDirection)
-        Humanoid.PlatformStand = true
-        Workspace.Gravity = 0
+        local HumanoidRootPartLookVector = HumanoidRootPart.CFrame.LookVector
+        local CameraLookVector = Camera.CFrame.LookVector
+        local FloatSpeed = FloatSpeed
+        
+        if MoveDirection.Magnitude > 0 then
+          HumanoidRootPart.CFrame = CFrame.lookAt(HumanoidRootPart.Position, Camera.CFrame.Position)
+          HumanoidRootPart.CFrame = HumanoidRootPart.CFrame * CFrame.new(HumanoidRootPartLookVector + FloatSpeed)
+          Humanoid.PlatformStand = true
+          Workspace.Gravity = 0
         end
+        end
+        
         if WalkSpeedState then
           SetWalkSpeed(WalkSpeedValue)
         end
