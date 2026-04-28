@@ -32,10 +32,10 @@ getgenv().Nyx_Hub = {
   }
 }
 
-local HomeTab = loadstring(game:HttpGet(""))()
-local MainTab = loadstring(game:HttpGet(""))()
-local CrystalTab = loadstring(game:HttpGet(""))()
-local KillerTab = loadstring(game:HttpGet(""))()
-local RebirthsTab = loadstring(game:HttpGet(""))()
-local StatusTab = loadstring(game:HttpGet(""))()
-local MiscTab = loadstring(game:HttpGet(""))()
+local HomeTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/Nyx_Hub%20%7C%20Muscle_Legends/HomeTab.lua"))()
+local MainTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/Nyx_Hub%20%7C%20Muscle_Legends/MainTab.lua"))()
+local CrystalTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/Nyx_Hub%20%7C%20Muscle_Legends/CrystalTab.lua"))()
+local KillerTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/Nyx_Hub%20%7C%20Muscle_Legends/KillerTab.lua"))()
+local RebirthsTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/Nyx_Hub%20%7C%20Muscle_Legends/RebirthsTab.lua"))()
+local StatusTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/Nyx_Hub%20%7C%20Muscle_Legends/StatusTab.lua"))()
+local MiscTab = loadstring(game:HttpGet("https://raw.githubusercontent.com/nullmodder/Nyx_Hub-Universal/refs/heads/main/Nyx_Hub%20%7C%20Muscle_Legends/MiscTab.lua"))()
