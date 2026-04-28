@@ -18,6 +18,7 @@ states["HomeTab"] = {
   jumppower = 52,
   size = 2
 }
+objects["HomeTab"] = {}
 
 -- Variables
 local run_service = game:GetService("RunService")
