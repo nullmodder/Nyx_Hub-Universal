@@ -20,6 +20,7 @@ states["HomeTab"] = {
 }
 
 -- Variables
+local run_service = game:GetService("RunService")
 local players = game:GetService("Players")
 local player = players.LocalPlayer
 
@@ -56,3 +57,21 @@ function set_size(value)
 game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer(unpack(args))
 end
 
+
+-- Loops
+local auto_size_start_time = tick()
+
+run_service.Heartbeat:Connect(function()
+  if states["TabHome"].auto_walkspeed then
+    set_walkspeed(states["TabHome"].walkspeed)
+  end
+  if states["TabHome"].auto_jumppower then
+    set_jumppower(states["TabHome"].jumppower)
+  end
+  if states["TabHome"].auto_size then
+    if (tick() - auto_size_start_time) > 1 then
+      set_size(states["TabHome"].size)
+      auto_size_start_time = 0
+    end
+  end
+end)
