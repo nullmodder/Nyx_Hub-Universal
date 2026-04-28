@@ -13,11 +13,23 @@ local window = jmods_lib:CreateWindow({
     DragImage = 127271155083726
 })
 
+function get_player_character(player)
+  return player and player.Character or false
+end
+
+function get_character_instance(character,instance_name)
+  return character and character:FindFirstChild("instance_name") or false
+end
+
 getgenv().Nyx_Hub = {
   window = nil,
   tabs = {},
   states = {},
-  objects = {}
+  objects = {},
+  functions = {
+    ["get_player_character"] = get_player_character,
+    ["get_character_instance"] = get_character_instance
+  }
 }
 
 local HomeTab = loadstring(game:HttpGet(""))()
