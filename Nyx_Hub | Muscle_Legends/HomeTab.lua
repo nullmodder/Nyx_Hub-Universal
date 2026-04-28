@@ -62,16 +62,16 @@ end
 local auto_size_start_time = tick()
 
 run_service.Heartbeat:Connect(function()
-  if states["TabHome"].auto_walkspeed then
-    set_walkspeed(states["TabHome"].walkspeed)
+  if states["HomeTab"].auto_walkspeed then
+    set_walkspeed(states["HomeTab"].walkspeed)
   end
-  if states["TabHome"].auto_jumppower then
-    set_jumppower(states["TabHome"].jumppower)
+  if states["HomeTab"].auto_jumppower then
+    set_jumppower(states["HomeTab"].jumppower)
   end
-  if states["TabHome"].auto_size then
+  if states["HomeTab"].auto_size then
     if (tick() - auto_size_start_time) > 1 then
-      set_size(states["TabHome"].size)
-      auto_size_start_time = 0
+      set_size(states["HomeTab"].size)
+      auto_size_start_time = tick()
     end
   end
 end)
