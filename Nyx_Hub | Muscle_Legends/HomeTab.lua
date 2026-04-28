@@ -10,6 +10,14 @@ local get_character_instance = functions["get_character_instance"]
 
 -- Tab creation
 tabs["HomeTab"] = window:CreateTab("Home")
+states["HomeTab"] = {
+  auto_walkspeed = false,
+  auto_jumppower = false,
+  auto_size = false,
+  walkspeed = 16,
+  jumppower = 52,
+  size = 2
+}
 
 -- Variables
 local players = game:GetService("Players")
@@ -40,5 +48,11 @@ function set_jumppower(value)
 end
 
 function set_size(value)
-  
+  local args = {
+    [1] = "changeSize",
+    [2] = value
+}
+
+game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer(unpack(args))
 end
+
