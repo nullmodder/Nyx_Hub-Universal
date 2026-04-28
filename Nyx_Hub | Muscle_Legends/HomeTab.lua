@@ -57,6 +57,63 @@ function set_size(value)
 game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer(unpack(args))
 end
 
+objects["HomeTab"]["walkspeed_slider"] = tab:CreateSlider({
+    Name = "walkspeed",
+    Range = {0, 1000},
+    Increment = 1,
+    Suffix = "studs/s",
+    CurrentValue = 16,
+    Callback = function(value)
+      states["HomeTab"].walkspeed = value
+    end
+})
+
+objects["HomeTab"]["walkspeed_toggle"] = tab:CreateToggle({
+    Name = "auto walkspeed",
+    CurrentValue = false,
+    Callback = function(state)
+      states["HomeTab"].auto_walkspeed = state
+    end
+})
+
+objects["HomeTab"]["jumppower_slider"] = tab:CreateSlider({
+    Name = "jumppower",
+    Range = {0, 1000},
+    Increment = 1,
+    Suffix = "studs/s",
+    CurrentValue = 16,
+    Callback = function(value)
+      states["HomeTab"].jumppower = value
+    end
+})
+
+objects["HomeTab"]["jumppower_toggle"] = tab:CreateToggle({
+    Name = "auto jumppower",
+    CurrentValue = false,
+    Callback = function(state)
+      states["HomeTab"].auto_jumppower = state
+    end
+})
+
+objects["HomeTab"]["size_slider"] = tab:CreateSlider({
+    Name = "size",
+    Range = {0, 100},
+    Increment = 1,
+    Suffix = "studs/s",
+    CurrentValue = 1,
+    Callback = function(value)
+      states["HomeTab"].size = value
+    end
+})
+
+objects["HomeTab"]["size_toggle"] = tab:CreateToggle({
+    Name = "auto size",
+    CurrentValue = false,
+    Callback = function(state)
+      states["HomeTab"].auto_size = state
+    end
+})
+
 
 -- Loops
 local auto_size_start_time = tick()
