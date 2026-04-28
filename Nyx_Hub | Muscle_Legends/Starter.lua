@@ -22,7 +22,7 @@ function get_character_instance(character,instance_name)
 end
 
 getgenv().Nyx_Hub = {
-  window = nil,
+  window = window,
   tabs = {},
   states = {},
   objects = {},
